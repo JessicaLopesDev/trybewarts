@@ -1,9 +1,13 @@
-const inputEmail = document.querySelector('#input-email').value;
-const inputSenha = document.querySelector('#input-senha').value;
+const inputEmail = document.querySelector('#input-email');
+const inputSenha = document.querySelector('#input-senha');
 const buttonEntrar = document.querySelector('#form-button');
 
-if (inputEmail === 'tryber@teste.com' && inputSenha === '123456') {
-    alert('Olá, Tryber!')
-
+function handleAlert (event) {
+    event.preventDefault()
+    if (inputEmail.value === 'tryber@teste.com' && inputSenha.value === '123456') {
+        alert('Olá, Tryber!')
+    } else {
+        alert('Email ou senha inválidos.')
+    }
 }
-console.log(inputEmail)
+buttonEntrar.addEventListener('click', handleAlert)
