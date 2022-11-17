@@ -24,4 +24,5 @@ main {
 
 .input-container {
     display: flex;
+    flex-direction: row;
 }
