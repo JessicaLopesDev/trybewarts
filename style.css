@@ -22,7 +22,12 @@ main {
     height: 500px;
 }
 
-.input-container {
+#nome-sobrenome {
+    display: flex;
+    flex-direction: row;
+}
+
+#email-casa {
     display: flex;
     flex-direction: row;
 }
