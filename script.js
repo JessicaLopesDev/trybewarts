@@ -6,9 +6,8 @@ const inputInfo = document.querySelector('#agreement');
 function handleSubmit(event) {
   const submitButton = document.querySelector('#submit-btn');
   const element = event.target;
-  if (element.checked) {
-    submitButton.disabled = false;
-  }
+
+  submitButton.disabled = !element.checked;
 }
 
 function handleAlert(event) {
