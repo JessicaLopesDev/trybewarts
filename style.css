@@ -50,6 +50,7 @@ main {
   display: flex;
   justify-content: space-around;
   background-color: rgb(247, 247, 247);
+  padding-left: 32px;
 }
 
 #evaluation-form {
@@ -159,11 +160,24 @@ hr {
 }
 
 #textarea {
+  width: 100%;
   padding: 10px;
   border-radius: 6px;
-  margin: 16px 16px 16px 0;
   background-color: white;
   border: solid 1px rgb(212, 212, 212);
+}
+
+#textarea-container {
+  margin: 16px 16px 16px 0;
+  position: relative;
+}
+
+#counter {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  font-size: 14px;
+  color: rgb(61, 60, 60);
 }
 
 #label-infos {
