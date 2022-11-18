@@ -62,42 +62,139 @@ main {
 #evaluation-form h3 {
   text-align: center;
   margin-bottom: 32px;
+  font-size: 24px;
 }
 
 #trybewarts-forms-logo {
   height: 500px;
 }
 
-#name-container {
+#inputs-container {
   display: flex;
-  flex-direction: row;
-  gap: 16px;
-  margin-bottom: 16px;
+  flex-wrap: wrap;
 }
 
 .input {
   padding: 10px;
   border: none;
   border-radius: 6px;
-  width: 100%;
+  width: calc(50% - 16px);
+  margin-right: 16px;
+  margin-bottom: 16px;
   background-color: white;
-  border: solid 1px rgb(230, 228, 228);
+  border: solid 1px rgb(212, 212, 212);
 }
 
-#email-house-container {
+hr {
+  margin-right: 16px;
+}
+
+#family-tech-container {
   display: flex;
-  flex-direction: row;
-  gap: 16px;
+  justify-content: space-between;
+  margin: 16px 16px 0 0;
+}
+
+#family-container {
+  display: flex;
+  flex-direction: column;
+}
+
+#family-container label {
+  margin-bottom: 16px;
+}
+
+#label-family {
+  font-weight: 600;
+}
+
+#tech-container {
+  display: flex;
+  flex-direction: column;
+}
+
+#label-content {
+  font-weight: 600;
+}
+
+
+#tech-container label{
+  margin-bottom: 16px;
+}
+
+#tech-container label input{
+  margin-right: 4px;
+}
+
+#check-tech-container {
+  display: flex;
+  flex-wrap: wrap; 
+}
+
+.tech-label {
+  width: 33.3%;
+}
+
+#label-rate {
+  margin-top: 16px;
+  font-weight: 600;
 }
 
 #rate-container {
+  margin-top: 16px;
   display: flex;
+  margin-bottom: 16px;
+}
+
+#rate-container label {
+  margin-right: 16px;
+}
+
+#rate-container label input{
+  margin-right: 4px;
+}
+
+.textarea {
+  font-weight: 600;
+}
+
+#textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  margin: 16px 16px 16px 0;
+  background-color: white;
+  border: solid 1px rgb(212, 212, 212);
+}
+
+#label-infos {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+#agreement {
+  margin-left: 4px;
+}
+
+#submit-btn {
+  margin: 16px 16px 32px 0;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  background-color: rgb(226, 217, 224);
+  color: rgb(87, 85, 85);
+  cursor: not-allowed;
 }
 
 #submit-btn:enabled {
+  margin: 16px 16px 32px 0;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
   background-color: rgb(141, 23, 115);
   color: white;
+  cursor: pointer;
+}
+
+#trybewarts-forms-logo {
+  margin: auto 0;
 }
 
 footer {

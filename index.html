@@ -22,11 +22,9 @@
     <main>
       <form id="evaluation-form" action="">
         <h3>Formulário de Avaliação</h3>
-        <div id="name-container">
+        <div id="inputs-container">
           <input class="input" id="input-name" placeholder="Nome" type="text">
           <input class="input" id="input-lastname" placeholder="Sobrenome" type="text">
-        </div>
-        <div id="email-house-container">
           <input class="input" id="input-email" placeholder="Email" type="text">
             <select class="input" name="" id="house">
               <option disabled selected>Selecione a casa</option>
@@ -37,40 +35,49 @@
             </select>
         </div>
         <hr>
-        <label id="label-family" for="">Qual sua família?</label>
-        <label for="frontend">
-          <input id="frontend" name="family" value="Frontend" type="radio">
-          Família Frontend
-        </label>
-        <label for="backend">
-          <input id="backend" name="family" value="Backend" type="radio">
-          Família Backend
-        </label>
-        <label for="fullstack">
-          <input id="fullstack" name="family" value="FullStack" type="radio">
-          Família FullStack
-        </label>
-        <label id="label-content" for="">
-          Qual conteúdo você está com mais vontade de aprender?
-        </label>
-        <label for="hofs">
-          <input id="hofs" class="subject" value="HoFs" type="checkbox">HoFs
-        </label>
-        <label for="jest">
-          <input id="jest" class="subject" value="Jest" type="checkbox">Jest
-        </label>
-        <label for="promises">
-          <input id="promises" class="subject" value="Promises" type="checkbox">Promises
-        </label>
-        <label for="react">
-          <input id="react" class="subject" value="React" type="checkbox">React
-        </label>
-        <label for="sql">
-          <input id="sql" class="subject" value="SQL" type="checkbox">SQL
-        </label>
-        <label for="python">
-          <input id="python" class="subject" value="Python" type="checkbox">Python
-        </label>
+        <div id="family-tech-container">
+          <div id="family-container">
+            <label id="label-family" for="">Qual sua família?</label>
+            <label for="frontend">
+              <input id="frontend" name="family" value="Frontend" type="radio">
+              Família Frontend
+            </label>
+            <label for="backend">
+              <input id="backend" name="family" value="Backend" type="radio">
+              Família Backend
+            </label>
+            <label for="fullstack">
+              <input id="fullstack" name="family" value="FullStack" type="radio">
+              Família FullStack
+            </label>
+          </div>
+          <div id="tech-container">
+            <label id="label-content" for="">
+              Qual conteúdo você está com mais vontade de aprender?
+            </label>
+            <div id="check-tech-container">
+              <label class="tech-label" for="hofs">
+                <input id="hofs" class="subject" value="HoFs" type="checkbox">HoFs
+              </label>
+              <label class="tech-label" for="jest">
+                <input id="jest" class="subject" value="Jest" type="checkbox">Jest
+              </label>
+              <label class="tech-label" for="promises">
+                <input id="promises" class="subject" value="Promises" type="checkbox">Promises
+              </label>
+              <label class="tech-label" for="react">
+                <input id="react" class="subject" value="React" type="checkbox">React
+              </label>
+              <label class="tech-label" for="sql">
+                <input id="sql" class="subject" value="SQL" type="checkbox">SQL
+              </label>
+              <label class="tech-label" for="python">
+                <input id="python" class="subject" value="Python" type="checkbox">Python
+              </label>
+            </div>
+          </div>
+        </div>
+        <hr>
         <label id="label-rate" for="">
           Como você avalia a Trybewarts?
         </label>
@@ -107,7 +114,7 @@
           </label>
         </div>
         <label class="textarea" for="">Deixe seu comentário:</label>
-        <textarea name="" id="" maxlength="500" cols="30" rows="10"></textarea>
+        <textarea name="" id="textarea" maxlength="500" cols="30" rows="10"></textarea>
         <label for="agreement" id="label-infos">
           Você concorda com o uso das informações acima?
           <input type="checkbox" id="agreement">
