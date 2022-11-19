@@ -53,6 +53,19 @@ main {
   padding-left: 32px;
 }
 
+#form-data {
+  display: none;
+  height: calc(100vh - 130px);
+  align-items: center;
+}
+
+#form-data ul li {
+  list-style: none;
+  margin-bottom: 8px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
 #evaluation-form {
   display: flex;
   flex-direction: column;
