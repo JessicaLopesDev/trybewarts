@@ -31,12 +31,25 @@ function handleTextareaChange(event) {
 
 function handleSumitForm(event) {
   event.preventDefault();
-  const formElements = document.querySelector('#evaluation-form').elements;
-  const nameInfo = formElements[3].name;
-  console.log(nameInfo);
   formContainer.style.display = 'none';
   infoContainer.style.display = 'flex';
+
+  const evaluationForm = document.querySelector('#evaluation-form').elements;
+  document.querySelector('#name-data').innerHTML = `Nome: ${evaluationForm['input-name'].value} 
+    ${evaluationForm['input-lastname'].value}`;
+  document.querySelector('#email-data').innerHTML = `Email: ${evaluationForm['input-email'].value}`;
+
+  // const selectedFamily = '';
+  const houses = document.querySelector('#house');
+  const selectedHouse = houses.options[houses.selectedIndex].value;
+
+  document.querySelector('#house-data').innerHTML = `Casa: ${selectedHouse}`;
 }
+
+
+// const formFamily = document.querySelectorAll('input[name="family"]').checked;
+// const dataFamily = document.querySelector('#family-data');
+// dataFamily.innerText = `Casa: ${formFamily.value}`;
 
 buttonEntrar.addEventListener('click', handleAlert);
 inputInfo.addEventListener('click', handleSubmit);
