@@ -7,6 +7,7 @@ const counter = document.querySelector('#counter');
 const form = document.querySelector('#evaluation-form');
 const formContainer = document.querySelector('#form-container');
 const infoContainer = document.querySelector('#form-data');
+const listData = document.querySelectorAll('li');
 
 function handleSubmit(event) {
   const submitButton = document.querySelector('#submit-btn');
@@ -28,51 +29,69 @@ function handleTextareaChange(event) {
   counter.innerHTML = 500;
   counter.innerHTML -= event.target.value.length;
 }
-// const evaluationForm = document.querySelector('#evaluation-form').elements;
-// document.querySelector('#name-data').innerHTML = `Nome: ${evaluationForm['input-name'].value} 
-//   ${evaluationForm['input-lastname'].value}`;
-// document.querySelector('#email-data').innerHTML = `Email: ${evaluationForm['input-email'].value}`;
-// const houses = document.querySelector('#house');
-// const selectedHouse = houses.options[houses.selectedIndex].value;
-// document.querySelector('#house-data').innerHTML = `Casa: ${selectedHouse}`;
 
-// const formFamily = document.querySelectorAll('input[name="family"]');
-// let result = '';
-// for (let index = 0; index < formFamily.length; index += 1) {
-//   if (formFamily[index].checked) {
-//     result = formFamily[index].value;
-//   }
-// }
-// document.querySelector('#family-data').innerHTML = `Casa: ${result}`;
+function getNameAndHouseValues(event) {
+  const elements = event.target;
+  const houses = elements.house.options;
+  const selectedHouse = houses[houses.selectedIndex].value;
+  for (let index = 0; index < elements.length; index += 1) {
+    if (elements[index].name === 'name') {
+      listData[0].innerHTML = `Nome: ${elements[index].value} ${elements['input-lastname'].value}`;
+    }
+    if (elements[index].name === 'house') {
+      listData[2].innerHTML = `Casa: ${selectedHouse}`;
+    }
+  }
+}
 
-// const formTech = document.querySelectorAll('input[class="subject"]');
-// // console.log(formTech);
-// let result = '';
-// for (let index = 0; index < formTech.length; index += 1) {
-//   if (formTech[index].checked) {
-//     result += `${formTech[index].value}, `;
-//   }
-// }
-// document.querySelector('#tech-data').innerHTML = `Matérias: ${result}`;
+function getEmailAndTextareaValues(event) {
+  const elements = event.target;
+  for (let index = 0; index < elements.length; index += 1) {
+    if (elements[index].name === 'email') {
+      listData[1].innerHTML = `Email: ${elements[index].value}`;
+    }
+    if (elements[index].name === 'textarea') {
+      listData[6].innerHTML = `Observações: ${elements[index].value}`;
+    }
+  }
+}
+
+function getTechValues(event) {
+  const elements = event.target;
+  const result = [];
+  for (let index = 0; index < elements.length; index += 1) {
+    if (elements[index].name === 'subject' && elements[index].checked) {
+      result.push(elements[index].value);
+    }
+  }
+  listData[4].innerHTML = `Matérias: ${result.join(', ')}`;
+}
+
+function getRadioValues(event, index) {
+  if (event[index].name === 'rate') {
+    listData[5].innerHTML = `Avaliação: ${event[index].value}`;
+  }
+  if (event[index].name === 'family') {
+    listData[3].innerHTML = `Família: ${event[index].value}`;
+  }
+}
 
 function handleSumitForm(event) {
+  const elements = event.target;
   event.preventDefault();
   formContainer.style.display = 'none';
   infoContainer.style.display = 'flex';
 
-  const formRate = document.querySelectorAll('input[name="rate"]');
-  let result = '';
-  for (let index = 0; index < formRate.length; index += 1) {
-    if (formRate[index].checked) {
-      result = formRate[index].value;
+  getEmailAndTextareaValues(event);
+  getNameAndHouseValues(event);
+  getTechValues(event);
+
+  for (let index = 0; index < elements.length; index += 1) {
+    if (elements[index].checked) {
+      getRadioValues(elements, index);
     }
   }
-  document.querySelector('#family-data').innerHTML = `Avaliação: ${result}`;
 }
-
-
-// const dataFamily = ;
-// dataFamily.innerText = ;
 
 buttonEntrar.addEventListener('click', handleAlert);
 inputInfo.addEventListener('click', handleSubmit);
