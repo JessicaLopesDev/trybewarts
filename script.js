@@ -59,6 +59,7 @@ function getEmailAndTextareaValues(event) {
 function getTechValues(event) {
   const elements = event.target;
   const result = [];
+
   for (let index = 0; index < elements.length; index += 1) {
     if (elements[index].name === 'subject' && elements[index].checked) {
       result.push(elements[index].value);
